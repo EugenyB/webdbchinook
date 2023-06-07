@@ -2,25 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Tracks</title>
+    <title>Genres</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/dist/css/bootstrap.css}">
 </head>
 <body>
-<table class="table table-sm table-success table-striped table-hover">
-    <thead class="table-dark">
+<table class="table table-sm table-primary table-striped table-hover" style="width: 50%">
+    <thead class="table-info">
     <tr>
         <th>#</th>
-        <th>Name</th>
-        <th>Duration</th>
         <th>Genre</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="t : ${tracks}">
-        <td th:text="${t.id}"></td>
-        <td th:text="${t.name}"></td>
-        <td th:text="${t.milliseconds}"></td>
-        <td th:text="${t.genre.name}"></td>
+    <tr th:each="g : ${genres}">
+        <td th:text="${g.id}"></td>
+        <td th:text="${g.name}"></td>
     </tr>
     </tbody>
 </table>
