@@ -1,11 +1,11 @@
 package com.example.webdbchinook.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,5 +18,8 @@ public class Genre {
 
     @Column(name = "Name", length = 120)
     private String name;
+
+    @OneToMany(mappedBy = "genre", orphanRemoval = true)
+    private Set<Track> tracks = new LinkedHashSet<>();
 
 }

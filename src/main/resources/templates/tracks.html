@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracks</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t : ${tracks}">
+        <td th:text="${t.id}"></td>
+        <td th:text="${t.name}"></td>
+        <td th:text="${t.milliseconds}"></td>
+        <td th:text="${t.genre.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
